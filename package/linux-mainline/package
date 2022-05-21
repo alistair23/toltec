@@ -6,7 +6,7 @@ archs=(rm2)
 pkgnames=(linux-mainline)
 pkgdesc="reMarkable 2 Kernel based on the mainline kernel"
 url=https://www.kernel.org
-pkgver=5.17.0-1
+pkgver=5.18.0-0
 timestamp=2021-10-28T19:41:07Z
 section="devel"
 maintainer="Alistair Francis <alistair@alistair23.me>"
@@ -16,8 +16,8 @@ flags=(nostrip)
 installdepends=(kernelctl)
 image=base:v2.2
 
-source=("https://github.com/alistair23/linux/archive/2ef1f512f83a6322b484964eabe31b04a964b0e6.tar.gz")
-sha256sums=(f691c7c50ef50bc9b35c1e180a59222d4b823e1da3f39db06757cd15e4fe3304)
+source=("https://github.com/alistair23/linux/archive/02e407a4dd8242245c86a89869facf8bb6abc5f5.tar.gz")
+sha256sums=(0c5762ce70cac581854bf20759d5f90994fc2e167a90d24d4d2ab1511f052029)
 
 build() {
     mkdir -p out/lib
@@ -44,10 +44,8 @@ configure() {
     echo ""
     echo "Known issues with the mainline kernel:"
     echo " - No support for low power mode (suspend uses more power then it should)"
-    echo " - Waking from sleep can be unreliable"
-    echo " - WiFi sometimes is off on boot (can be turned on in Oxide though)"
+    echo " - WiFi sometimes is off on boot (can be turned on again though)"
     echo " - GUI shutdown in Oxide doesn't work"
     echo " - Wacom stylus doesn't work in Xochitl (works everywhere else though)"
-    echo " - No RDNIS (network) access over USB"
     echo " - No OTG control support"
 }
